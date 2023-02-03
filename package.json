@@ -1,0 +1,43 @@
+{
+  "name": "react-slider-transformer",
+  "version": "0.0.1",
+  "description": "React Slider Transformer is a versatile and user-friendly slider package for React that makes it easy to create responsive sliders from any content. With a range of customizable options and intuitive configuration, you can turn anything into a slider in just a few simple steps. The package utilizes the latest React technology to ensure a smooth and seamless experience, making it the ideal solution for developers and designers looking to add dynamic, eye-catching sliders to their projects. Whether you're creating a product carousel, image gallery, or a simple content slider, React Slider Transformer provides the tools and functionality you need to get the job done quickly and efficiently. So why wait? Transform your content into a stunning, responsive slider today with React Slider Transformer!",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "keywords": [
+    "react",
+    "react slider",
+    "react carousel",
+    "carousel",
+    "infinite loop",
+    "responsive slider",
+    "light slider",
+    "jeffrey"
+  ],
+  "author": {
+    "name": "Jeffrey Nwankwo",
+    "email": "chiedoziejeffrey@gmail.com",
+    "url": "https://linkedin.com/in/jeffsalive"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/react": "^18.0.27",
+    "@types/react-icons": "^3.0.0",
+    "react": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "rollup": "^3.12.1",
+    "rollup-plugin-dts": "^5.1.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
