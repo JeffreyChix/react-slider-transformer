@@ -1,6 +1,6 @@
 # React Slider Transformer
 
-React Slider Transformer is a versatile and user-friendly slider package for React that makes it easy to create responsive sliders from any content. With a range of customizable options and intuitive configuration, you can turn anything into a slider in just a few simple steps. The package utilizes the latest React technology to ensure a smooth and seamless experience, making it the ideal solution for developers and designers looking to add dynamic, eye-catching sliders to their projects. Whether you're creating a product carousel, image gallery, or a simple content slider, React Slider Transformer provides the tools and functionality you need to get the job done quickly and efficiently. So why wait? Transform your content into a stunning, responsive slider today with React Slider Transformer!
+React Slider Transformer is a versatile and user-friendly slider package for React that makes it easy to create responsive sliders from any content. With a range of customizable options and intuitive configuration, you can turn anything into a slider in just a few simple steps. The package utilizes the latest React technology to ensure a smooth and seamless experience, making it the ideal solution for developers and designers looking to add dynamic, eye-catching sliders to their projects. Whether you're creating a product carousel, image gallery, or a simple content slider, React Slider Transformer provides the tools and functionality you need to get the job done quickly and efficiently.
 
 ### Features
 
@@ -19,7 +19,7 @@ React Slider Transformer is a versatile and user-friendly slider package for Rea
 
 #### Important
 
-The presentation has been configured to mimic an endless loop by replicating the slides. Upon reaching the final slide, it seamlessly transitions back to the first slide without any disruption or jump to the beginning just like the owl carousel.
+The presentation has been configured to mimic an endless loop by replicating the slides. Upon reaching the final slide, it seamlessly transitions back to the first slide without any disruption or jump to the beginning just like the owl carousel. You don't even know 😎.
 
 ### Installing as a package
 
@@ -89,11 +89,11 @@ const Page = () => {
 | clipRight                 | `boolean`                                              | Clip the top right of the slides wrapper. Just for additional styling. Defaults to `false`.                                                                                                                                       |
 
 
-### New features coming up
+### Upcoming features
 
 - Drag and swipe
 - Custom animation
 - Vertical axis
 - More customization
 
-If you have any ideas or suggestions for improving the package, please don't hesitate to reach out at jeffreyintech@gmail.com. Your feedback is valued and appreciated.
+If you have any ideas or suggestions for improving the package, please don't hesitate to reach out at [jeffreyintech@gmail.com](mailto:jeffreyintech@gmail.com). Your feedback is valued and appreciated.
