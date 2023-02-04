@@ -654,7 +654,7 @@ const Sliderify = ({
               );
             })}
           </div>
-          <style jsx global>{`
+          <style jsx>{`
             .navIcon {
               transition: all 1s ease 0s;
               &:hover {
