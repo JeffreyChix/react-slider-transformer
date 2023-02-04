@@ -20,8 +20,6 @@ import {
   SliderAction,
 } from "../../store/index";
 
-import styles from "./Sliderify.module.scss";
-
 const Sliderify = ({
   slides,
   autoPlay = _DEFAULTS.D_AUTO_PLAY,
@@ -495,8 +493,8 @@ const Sliderify = ({
         onBlur={() => setWrapperFocus(false)}
         ref={sliderTranformerWrapper}
         className={`__react_sliderify_v0__wrapper ${className} ${
-          clip && styles.clip
-        } ${clipRight && styles.clip_right}`}
+          clip && "clip"
+        } ${clipRight && "clip_right"}`}
       >
         <div
           className="___slider___transformer_v0__inner"
@@ -572,14 +570,14 @@ const Sliderify = ({
                 visibility: active === 0 ? "hidden" : "visible",
               }}
               onClick={leftClick}
-              className={styles.navIcon}
+              className={"navIcon"}
             >
               {navPrevIcon}
             </div>
             <div
               style={{ paddingRight: "1.25rem", cursor: "pointer" }}
               onClick={rightClick}
-              className={styles.navIcon}
+              className={"navIcon"}
             >
               {navNextIcon}
             </div>
@@ -656,6 +654,46 @@ const Sliderify = ({
               );
             })}
           </div>
+          <style jsx global>{`
+            .navIcon {
+              transition: all 1s ease 0s;
+              &:hover {
+                transform: scale(1.2);
+              }
+            }
+
+            .clip {
+              -webkit-clip-path: polygon(
+                18px 0%,
+                100% 0%,
+                calc(100% - 18px) 100%,
+                0% 100%
+              );
+              clip-path: polygon(
+                18px 0%,
+                100% 0%,
+                calc(100% - 18px) 100%,
+                0% 100%
+              );
+            }
+
+            .clip_right {
+              -webkit-clip-path: polygon(
+                calc(100% - 48px) 0,
+                100% 48px,
+                100% 100%,
+                0 100%,
+                0 0
+              );
+              clip-path: polygon(
+                calc(100% - 48px) 0,
+                100% 48px,
+                100% 100%,
+                0 100%,
+                0 0
+              );
+            }
+          `}</style>
         </div>
       )}
     </>
