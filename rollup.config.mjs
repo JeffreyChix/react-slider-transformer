@@ -23,6 +23,7 @@ export default [
         sourcemap: "inline",
       },
     ],
+    external: ["react", "react-dom"],
     plugins: [
       resolve(),
       commonjs(),

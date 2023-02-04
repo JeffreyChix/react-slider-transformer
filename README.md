@@ -31,7 +31,7 @@ Using npm: `npm install react-sliderify`
 
 ```javascript
 import React from "react";
-import Sliderify from "react-sliderify";
+import { Sliderify } from "react-sliderify";
 
 const Page = () => {
   return (
@@ -63,7 +63,7 @@ const Page = () => {
 ### Props
 
 | Name                      | Value                                                  | Description                                                                                                                                                                                                                       |
-|---------------------------|--------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | slides                    | `an array of objects`                                  | An array of objects. Each object must contain a 'content' property, representing the slide content in the form of a JSX element. The 'title' property is optional and can be used to provide a descriptive heading for the slide. |
 | autoPlay                  | `boolean`                                              | Change the slide automatically based on `slideDurationInSecs` prop.                                                                                                                                                               |
 | slideDurationInSecs       | `number`                                               | Measured in seconds, determines the frequency at which the slides advance automatically when the `autoPlay` option is enabled. The default interval is set to `10` seconds.                                                       |
@@ -87,7 +87,6 @@ const Page = () => {
 | className                 | `string`                                               | Additional class names for styling                                                                                                                                                                                                |
 | clip                      | `boolean`                                              | Add or remove clip-path CSS style. Defaults to `false`.                                                                                                                                                                           |
 | clipRight                 | `boolean`                                              | Clip the top right of the slides wrapper. Just for additional styling. Defaults to `false`.                                                                                                                                       |
-
 
 ### Upcoming features
 
