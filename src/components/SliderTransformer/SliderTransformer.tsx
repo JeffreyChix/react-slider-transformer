@@ -20,7 +20,7 @@ import {
   SliderAction,
 } from "../../store/index";
 
-// import styles from "./styles/index.module.scss";
+import styles from "./SliderTransformer.module.scss";
 
 const SliderTransformer = ({
   slides,
@@ -494,11 +494,11 @@ const SliderTransformer = ({
         onFocus={() => setWrapperFocus(true)}
         onBlur={() => setWrapperFocus(false)}
         ref={sliderTranformerWrapper}
-        // className={`___slider___transformer_v0__wrapper, ${
-        //   styles.slider__wrapper
-        // } ${className} ${clip && styles.clip} ${
-        //   clipRight && styles.clip_right
-        // }`}
+        className={`___slider___transformer_v0__wrapper, ${
+          styles.slider__wrapper
+        } ${className} ${clip && styles.clip} ${
+          clipRight && styles.clip_right
+        }`}
       >
         <div
           className="___slider___transformer_v0__inner"
@@ -574,14 +574,14 @@ const SliderTransformer = ({
                 visibility: active === 0 ? "hidden" : "visible",
               }}
               onClick={leftClick}
-            //   className={styles.navIcon}
+                className={styles.navIcon}
             >
               {navPrevIcon}
             </div>
             <div
               style={{ paddingRight: "1.25rem", cursor: "pointer" }}
               onClick={rightClick}
-            //   className={styles.navIcon}
+                className={styles.navIcon}
             >
               {navNextIcon}
             </div>
