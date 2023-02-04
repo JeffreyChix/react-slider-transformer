@@ -12,7 +12,7 @@ import { TfiArrowCircleLeft as AngleLeftIcon } from "react-icons/tfi";
 
 import {
   defaultSliderState,
-  SliderTransformerProps,
+  SliderifyProps,
   _DEFAULTS,
   SPOT_PLACEMENTS,
   SliderState,
@@ -20,9 +20,9 @@ import {
   SliderAction,
 } from "../../store/index";
 
-import styles from "./SliderTransformer.module.scss";
+import styles from "./Sliderify.module.scss";
 
-const SliderTransformer = ({
+const Sliderify = ({
   slides,
   autoPlay = _DEFAULTS.D_AUTO_PLAY,
   slideDurationInSecs = _DEFAULTS.D_SLIDE_DURATION_IN_SECS,
@@ -47,7 +47,7 @@ const SliderTransformer = ({
   navNextIcon = <AngleRightIcon size={35} style={{ color: "white" }} />,
   clip = _DEFAULTS.D_CLIP,
   clipRight = _DEFAULTS.D_CLIP_RIGHT,
-}: SliderTransformerProps) => {
+}: SliderifyProps) => {
   const slideDurationInMS = slideDurationInSecs * 1000; // convert to milliseconds;
   const transitionDurationInSeconds = transitionDurationInMS / 1000; // convert to seconds
 
@@ -664,4 +664,4 @@ const SliderTransformer = ({
   );
 };
 
-export default SliderTransformer;
+export default Sliderify;

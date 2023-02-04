@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface SliderTransformerProps {
+export interface SliderifyProps {
   slides?: { title?: string | JSX.Element; content: JSX.Element }[];
   autoPlay?: boolean;
   slideDurationInSecs?: number;

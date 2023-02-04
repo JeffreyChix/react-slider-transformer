@@ -1,12 +1,12 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import SliderTransformer from "./SliderTransformer";
+import Sliderify from "./Sliderify";
 
-describe("SliderTransformer", () => {
-  test("renders the SliderTransformer component", () => {
+describe("Sliderify", () => {
+  test("renders the Sliderify component", () => {
     render(
-      <SliderTransformer
+      <Sliderify
         slides={[{ title: "Hello", content: <div>Hello 2</div> }]}
       />
     );

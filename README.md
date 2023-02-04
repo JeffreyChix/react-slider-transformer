@@ -1,6 +1,6 @@
-# React Slider Transformer
+# React Sliderify
 
-React Slider Transformer is a versatile and user-friendly slider package for React that makes it easy to create responsive sliders from any content. With a range of customizable options and intuitive configuration, you can turn anything into a slider in just a few simple steps. The package utilizes the latest React technology to ensure a smooth and seamless experience, making it the ideal solution for developers and designers looking to add dynamic, eye-catching sliders to their projects. Whether you're creating a product carousel, image gallery, or a simple content slider, React Slider Transformer provides the tools and functionality you need to get the job done quickly and efficiently.
+React Sliderify is a versatile and user-friendly slider package for React that makes it easy to create responsive sliders from any content. With a range of customizable options and intuitive configuration, you can turn anything into a slider in just a few simple steps. The package utilizes the latest React technology to ensure a smooth and seamless experience, making it the ideal solution for developers and designers looking to add dynamic, eye-catching sliders to their projects. Whether you're creating a product carousel, image gallery, or a simple content slider, React Slider Transformer provides the tools and functionality you need to get the job done quickly and efficiently.
 
 ### Features
 
@@ -23,20 +23,20 @@ The presentation has been configured to mimic an endless loop by replicating the
 
 ### Installing as a package
 
-Using yarn: `yarn add react-slider-transformer`
+Using yarn: `yarn add react-sliderify`
 
-Using npm: `npm install react-slider-transformer`
+Using npm: `npm install react-sliderify`
 
 ### Usage
 
 ```javascript
 import React from "react";
-import SliderTransformer from "react-slider-transformer";
+import Sliderify from "react-slider-transformer";
 
 const Page = () => {
   return (
     <div className="home-page">
-      <SliderTransformer>
+      <Sliderify>
         <div
           style={{ height: "500px", backgroundColor: "red", color: "white" }}
         >
@@ -52,7 +52,7 @@ const Page = () => {
         >
           Slide 3
         </div>
-      </SliderTransformer>
+      </Sliderify>
     </div>
   );
 };

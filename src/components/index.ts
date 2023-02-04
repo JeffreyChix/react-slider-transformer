@@ -1,1 +1,1 @@
-export { default as SliderTransformer } from "./SliderTransformer";
+export { default as Sliderify } from "./Sliderify";
