@@ -31,7 +31,7 @@ Using npm: `npm install react-sliderify`
 
 ```javascript
 import React from "react";
-import Sliderify from "react-slider-transformer";
+import Sliderify from "react-sliderify";
 
 const Page = () => {
   return (

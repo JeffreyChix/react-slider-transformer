@@ -494,7 +494,7 @@ const Sliderify = ({
         onFocus={() => setWrapperFocus(true)}
         onBlur={() => setWrapperFocus(false)}
         ref={sliderTranformerWrapper}
-        className={`___slider___transformer_v0__wrapper, ${
+        className={`__react_sliderify_v0__wrapper, ${
           styles.slider__wrapper
         } ${className} ${clip && styles.clip} ${
           clipRight && styles.clip_right
