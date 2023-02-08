@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React from "react";
 
 export interface SliderifyProps {
   slides?: { title?: string | JSX.Element; content: JSX.Element }[];
@@ -22,7 +22,7 @@ export interface SliderifyProps {
   dotsPlacement?: "outside" | "inside";
   keyboardNavigationOnFocus?: boolean;
   className?: string;
-  children?: ReactNode;
+  children?: React.ReactNode;
   clip?: boolean;
   clipRight?: boolean;
 }

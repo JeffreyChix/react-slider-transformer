@@ -90,6 +90,7 @@ const Page = () => {
 
 ### Upcoming features
 
+- Styling adjustment
 - Drag and swipe
 - Custom animation
 - Vertical axis

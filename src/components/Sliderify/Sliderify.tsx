@@ -39,29 +39,28 @@ const Sliderify = ({
   transitionDurationInMS = _DEFAULTS.D_TRANSITION_DURATION_IN_MS,
   disableInfiniteLoop = _DEFAULTS.D_DISABLE_INFINITE_LOOP,
   disableTransition = _DEFAULTS.D_DISABLE_TRANSITION,
-  className,
-  children,
   navPrevIcon = <AngleLeftIcon size={35} style={{ color: "white" }} />,
   navNextIcon = <AngleRightIcon size={35} style={{ color: "white" }} />,
   clip = _DEFAULTS.D_CLIP,
   clipRight = _DEFAULTS.D_CLIP_RIGHT,
-}: SliderifyProps) => {
+  children,
+  className,
+}: SliderifyProps &
+  (
+    | { children: React.ReactNode }
+    | { slides: { title?: string | JSX.Element; content: JSX.Element }[] }
+  )) => {
   const slideDurationInMS = slideDurationInSecs * 1000; // convert to milliseconds;
   const transitionDurationInSeconds = transitionDurationInMS / 1000; // convert to seconds
 
-  const preparedSlides = useMemo(
-    () =>
-      children
-        ? Children.toArray(children).map((child) => ({
-            title: "",
-            content: child,
-          }))
-        : slides ?? [{ title: "", content: <></> }],
-    [children, slides]
-  );
-
-  const sliderTranformerWrapper = useRef<HTMLDivElement>(null);
-  const sliderTranformerInner = useRef<HTMLDivElement>(null);
+  const preparedSlides = useMemo(() => {
+    return children
+      ? Children.toArray(children).map((child) => ({
+          title: "",
+          content: child,
+        }))
+      : slides ?? [{ title: "", content: <></> }];
+  }, [children, slides]);
 
   const [wrapperFocused, setWrapperFocus] = useState(false);
 
@@ -491,14 +490,12 @@ const Sliderify = ({
         tabIndex={0}
         onFocus={() => setWrapperFocus(true)}
         onBlur={() => setWrapperFocus(false)}
-        ref={sliderTranformerWrapper}
         className={`__react_sliderify_v0__wrapper ${className} ${
           clip && "clip"
         } ${clipRight && "clip_right"}`}
       >
         <div
           className="___slider___transformer_v0__inner"
-          ref={sliderTranformerInner}
           style={{
             position: "relative",
             display: "flex",
@@ -654,46 +651,6 @@ const Sliderify = ({
               );
             })}
           </div>
-          <style jsx>{`
-            .navIcon {
-              transition: all 1s ease 0s;
-              &:hover {
-                transform: scale(1.2);
-              }
-            }
-
-            .clip {
-              -webkit-clip-path: polygon(
-                18px 0%,
-                100% 0%,
-                calc(100% - 18px) 100%,
-                0% 100%
-              );
-              clip-path: polygon(
-                18px 0%,
-                100% 0%,
-                calc(100% - 18px) 100%,
-                0% 100%
-              );
-            }
-
-            .clip_right {
-              -webkit-clip-path: polygon(
-                calc(100% - 48px) 0,
-                100% 48px,
-                100% 100%,
-                0 100%,
-                0 0
-              );
-              clip-path: polygon(
-                calc(100% - 48px) 0,
-                100% 48px,
-                100% 100%,
-                0 100%,
-                0 0
-              );
-            }
-          `}</style>
         </div>
       )}
     </>
