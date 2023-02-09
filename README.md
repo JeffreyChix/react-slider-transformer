@@ -1,6 +1,10 @@
 # React Sliderify
 
-React Sliderify is a versatile and user-friendly slider package for React that makes it easy to create responsive sliders from any content. With a range of customizable options and intuitive configuration, you can turn anything into a slider in just a few simple steps. The package utilizes the latest React technology to ensure a smooth and seamless experience, making it the ideal solution for developers and designers looking to add dynamic, eye-catching sliders to their projects. Whether you're creating a product carousel, image gallery, or a simple content slider, React Slider Transformer provides the tools and functionality you need to get the job done quickly and efficiently.
+React Sliderify is a versatile and user-friendly slider package for React that makes it easy to create responsive sliders from any content. With a range of customizable options and intuitive configuration, you can turn anything into a slider in just a few simple steps. The package utilizes the latest React technology to ensure a smooth and seamless experience, making it the ideal solution for developers and designers looking to add dynamic, eye-catching sliders to their projects. Whether you're creating a product carousel, image gallery, or a simple content slider, React Sliderify provides the tools and functionality you need to get the job done quickly and efficiently.
+
+### Demo
+
+[React Sliderify Demo](https://react-sliderify-demo.vercel.app/).
 
 ### Features
 
@@ -87,7 +91,7 @@ const Page = () => {
 | className                 | `string`                                               | Additional class names for styling                                                                                                                                                                                                |
 | clip                      | `boolean`                                              | Add or remove clip-path CSS style. Defaults to `false`.                                                                                                                                                                           |
 | clipRight                 | `boolean`                                              | Clip the top right of the slides wrapper. Just for additional styling. Defaults to `false`.                                                                                                                                       |
-| showSlideStatus                 | `boolean`                                              | Display or conceal the status of the current active slide in relation to the total number of slides. Defaults to `false`.                                                                                                                                       |
+| showSlideStatus           | `boolean`                                              | Display or conceal the status of the current active slide in relation to the total number of slides. Defaults to `false`.                                                                                                         |
 
 ### Navigation arrows
 
