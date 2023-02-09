@@ -7,8 +7,8 @@ import React, {
   useCallback,
   Children,
 } from "react";
-import { TfiArrowCircleRight as AngleRightIcon } from "react-icons/tfi";
-import { TfiArrowCircleLeft as AngleLeftIcon } from "react-icons/tfi";
+
+import "./Sliderify.scss";
 
 import {
   defaultSliderState,
@@ -33,14 +33,15 @@ const Sliderify = ({
   rounded = _DEFAULTS.D_ROUNDED,
   slideDirection = _DEFAULTS.D_SLIDE_DIRECTION,
   showTitle = _DEFAULTS.D_SHOW_TITLE,
+  showSlideStatus = _DEFAULTS.D_SHOW_SLIDE_STATUS,
   spotPlacement = _DEFAULTS.D_SPOT_PLACEMENT,
   dotsPlacement = _DEFAULTS.D_DOTS_PLACEMENT,
   keyboardNavigationOnFocus = _DEFAULTS.D_KEYBOARD_NAVIGATION_ON_FOCUS,
   transitionDurationInMS = _DEFAULTS.D_TRANSITION_DURATION_IN_MS,
   disableInfiniteLoop = _DEFAULTS.D_DISABLE_INFINITE_LOOP,
   disableTransition = _DEFAULTS.D_DISABLE_TRANSITION,
-  navPrevIcon = <AngleLeftIcon size={35} style={{ color: "white" }} />,
-  navNextIcon = <AngleRightIcon size={35} style={{ color: "white" }} />,
+  navPrevIcon,
+  navNextIcon,
   clip = _DEFAULTS.D_CLIP,
   clipRight = _DEFAULTS.D_CLIP_RIGHT,
   children,
@@ -292,6 +293,16 @@ const Sliderify = ({
     return `${100 / clonedSlides.length}%`;
   };
 
+  const getActiveSlide = () => {
+    if (!disableInfiniteLoop) {
+      if (lastSliderItem(clonedSlides, active))
+        return defaultSliderState.active;
+
+      if (active === 0) return preparedSlides.length;
+    }
+    return active;
+  };
+
   const onDotClickSlide = useCallback(
     (index: number) => {
       if (disableInfiniteLoop) {
@@ -534,6 +545,9 @@ const Sliderify = ({
             );
           })}
         </div>
+
+        {/* //! SLIDE SPOT.  */}
+
         {showSpot && (
           <div
             style={{
@@ -546,6 +560,24 @@ const Sliderify = ({
             }}
           ></div>
         )}
+
+        {/* //! SLIDE STATUS. EG: (2/3)  */}
+
+        {showSlideStatus && (
+          <div
+            style={{
+              position: "absolute",
+              bottom: "2px",
+              right: "2px",
+              fontSize: "13px",
+            }}
+          >
+            {getActiveSlide()} of {preparedSlides.length}
+          </div>
+        )}
+
+        {/* //! SLIDE NAV BUTTONS.  */}
+
         {showNavButtons && (
           <div
             style={{
@@ -564,17 +596,19 @@ const Sliderify = ({
               style={{
                 paddingLeft: "1.25rem",
                 cursor: "pointer",
-                visibility: active === 0 ? "hidden" : "visible",
+                visibility:
+                  disableInfiniteLoop && active === 0 ? "hidden" : "visible",
+                color,
               }}
               onClick={leftClick}
-              className={"navIcon"}
+              className={`navIcon ${!navPrevIcon && "navIconPrevBefore"}`}
             >
               {navPrevIcon}
             </div>
             <div
-              style={{ paddingRight: "1.25rem", cursor: "pointer" }}
+              style={{ paddingRight: "1.25rem", cursor: "pointer", color }}
               onClick={rightClick}
-              className={"navIcon"}
+              className={`navIcon ${!navNextIcon && "navIconNextBefore"}`}
             >
               {navNextIcon}
             </div>

@@ -62,35 +62,58 @@ const Page = () => {
 
 ### Props
 
-| Name                      | Value                                                  | Description                                                                                                                                                                                                                       |
-| ------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| slides                    | `an array of objects`                                  | An array of objects. Each object must contain a 'content' property, representing the slide content in the form of a JSX element. The 'title' property is optional and can be used to provide a descriptive heading for the slide. |
-| autoPlay                  | `boolean`                                              | Change the slide automatically based on `slideDurationInSecs` prop.                                                                                                                                                               |
-| slideDurationInSecs       | `number`                                               | Measured in seconds, determines the frequency at which the slides advance automatically when the `autoPlay` option is enabled. The default interval is set to `10` seconds.                                                       |
-| slideDirection            | `left or right`                                        | Direction of the slide. Defaults to `left`                                                                                                                                                                                        |
-| showNavButtons            | `boolean`                                              | Hide or show the arrow navigation buttons. Defaults to `true`.                                                                                                                                                                    |
-| navPrevIcon               | `any`                                                  | A custom element designated as the 'previous icon' which, upon click, navigates to the preceding slide.                                                                                                                           |
-| navNextIcon               | `any`                                                  | A custom element designated as the 'next icon' which, upon click, navigates to the next slide.                                                                                                                                    |
-| showNavDots               | `boolean`                                              | Hide or show the active slide indicators. Defaults to `true`                                                                                                                                                                      |
-| showSpot                  | `boolean`                                              | Hide or show the circular spot which has been included as a stylistic feature by setting the relevant option. Defaults to `true`.                                                                                                 |
-| showTitle                 | `boolean`                                              | When slides are supplied through the `slides` property, this option is to show or hide the accompanying title, if present.                                                                                                        |
-| color                     | `string`                                               | Set the color of some elements like the circular spot if visible.                                                                                                                                                                 |
-| baseColor                 | `string`                                               | Set the base color of the indicators                                                                                                                                                                                              |
-| activeColor               | `string`                                               | Set the active color of the indicators. When a slide is active, the indicator lights up.                                                                                                                                          |
-| disableInfiniteLoop       | `boolean`                                              | This controls the activation or deactivation of the infinite loop feature. Defaults to `false`.                                                                                                                                   |
-| disableTransition         | `boolean`                                              | This controls the activation or deactivation of the transition animation. Defaults to `false`.                                                                                                                                    |
-| rounded                   | `boolean`                                              | Add or remove rounded corners (border-radius).                                                                                                                                                                                    |
-| transitionDurationInMS    | `number`                                               | Adjust the duration of the transition between slides. Defaults to `1000` ms (1 second).                                                                                                                                           |
-| spotPlacement             | `top-left or top-right or bottom-left or bottom-right` | Set the postion of the circular spot slides wrapper. Defaults to `top-left`.                                                                                                                                                      |
-| dotsPlacement             | `outside or inside`                                    | Set the position of the dot indicators, inside or outside the slides. Defaults to `outside`.                                                                                                                                      |
-| keyboardNavigationOnFocus | `boolean`                                              | Control the slides with arrow keys on the keyboard when in focus. Defaults to `true`.                                                                                                                                             |
-| className                 | `string`                                               | Additional class names for styling                                                                                                                                                                                                |
-| clip                      | `boolean`                                              | Add or remove clip-path CSS style. Defaults to `false`.                                                                                                                                                                           |
-| clipRight                 | `boolean`                                              | Clip the top right of the slides wrapper. Just for additional styling. Defaults to `false`.                                                                                                                                       |
+| Name                | Value                 | Description                                                                                                                                                                                                                       |
+| ------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| slides              | `an array of objects` | An array of objects. Each object must contain a 'content' property, representing the slide content in the form of a JSX element. The 'title' property is optional and can be used to provide a descriptive heading for the slide. |
+| autoPlay            | `boolean`             | Change the slide automatically based on `slideDurationInSecs` prop.                                                                                                                                                               |
+| slideDurationInSecs | `number`              | Measured in seconds, determines the frequency at which the slides advance automatically when the `autoPlay` option is enabled. The default interval is set to `10` seconds.                                                       |
+| slideDirection      | `left or right`       | Direction of the slide. Defaults to `left`                                                                                                                                                                                        |
+| showNavButtons      | `boolean`             | Hide or show the arrow navigation buttons. Defaults to `true`.                                                                                                                                                                    |
+| navPrevIcon         | `any`                 | A custom element designated as the 'previous icon' which, upon click, navigates to the preceding slide.                                                                                                                           |
+| navNextIcon         | `any`                 | A custom element designated as the 'next icon' which, upon click, navigates to the next slide.                                                                                                                                    |
+| showSlideStatus     | `boolean`             | Display or conceal the status of the current active slide in relation to the total number of slides. Defaults to `false`.                                                                                                         |
+
+| showNavDots | `boolean` | Hide or show the active slide indicators. Defaults to `true` |
+| showSpot | `boolean` | Hide or show the circular spot which has been included as a stylistic feature by setting the relevant option. Defaults to `true`. |
+| showTitle | `boolean` | When slides are supplied through the `slides` property, this option is to show or hide the accompanying title, if present. |
+| color | `string` | Set the color of some elements like the circular spot if visible. |
+| baseColor | `string` | Set the base color of the indicators |
+| activeColor | `string` | Set the active color of the indicators. When a slide is active, the indicator lights up. |
+| disableInfiniteLoop | `boolean` | This controls the activation or deactivation of the infinite loop feature. Defaults to `false`. |
+| disableTransition | `boolean` | This controls the activation or deactivation of the transition animation. Defaults to `false`. |
+| rounded | `boolean` | Add or remove rounded corners (border-radius). |
+| transitionDurationInMS | `number` | Adjust the duration of the transition between slides. Defaults to `1000` ms (1 second). |
+| spotPlacement | `top-left or top-right or bottom-left or bottom-right` | Set the postion of the circular spot slides wrapper. Defaults to `top-left`. |
+| dotsPlacement | `outside or inside` | Set the position of the dot indicators, inside or outside the slides. Defaults to `outside`. |
+| keyboardNavigationOnFocus | `boolean` | Control the slides with arrow keys on the keyboard when in focus. Defaults to `true`. |
+| className | `string` | Additional class names for styling |
+| clip | `boolean` | Add or remove clip-path CSS style. Defaults to `false`. |
+| clipRight | `boolean` | Clip the top right of the slides wrapper. Just for additional styling. Defaults to `false`. |
+
+### Navigation arrows
+
+By default, the navigation arrows are displayed. Should you require any adjustments or customization, you can utilize the navPrevIcon and navNextIcon properties to modify the appearance of the arrows. These can be replaced with text or a custom-styled element that includes animation. To demonstrate, here is an example that utilizes the `react-icons` library to incorporate a new set of arrows.
+
+```javascript
+import React from "react";
+import {
+  BsArrowLeftSquare as LeftArrow,
+  BsArrowRightSquare as RightArrow,
+} from "react-icons/bs";
+
+import { Sliderify } from "react-sliderify";
+
+<Sliderify navPrevIcon={<LeftArrow />} navNextIcon={<RightArrow />}>
+  <div>Slider 1</div>
+  <div>Slider 2</div>
+  <div>Slider 3</div>
+</Sliderify>;
+
+/// `navPrevIcon` and `navNextIcon` can be set to anything even strings. You can animate them as you see fit.
+```
 
 ### Upcoming features
 
-- Styling adjustment
 - Drag and swipe
 - Custom animation
 - Vertical axis

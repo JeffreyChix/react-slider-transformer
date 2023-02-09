@@ -11,6 +11,7 @@ export interface SliderifyProps {
   showNavDots?: boolean;
   showSpot?: boolean;
   showTitle?: boolean;
+  showSlideStatus?: boolean;
   color?: string;
   activeColor?: string;
   disableInfiniteLoop?: boolean;
@@ -58,6 +59,7 @@ export const _DEFAULTS: {
   D_DISABLE_TRANSITION: boolean;
   D_CLIP: boolean;
   D_CLIP_RIGHT: boolean;
+  D_SHOW_SLIDE_STATUS: boolean;
 } = {
   D_SLIDE_DURATION_IN_SECS: 10,
   D_AUTO_PLAY: true,
@@ -78,6 +80,7 @@ export const _DEFAULTS: {
   D_DISABLE_TRANSITION: false,
   D_CLIP: false,
   D_CLIP_RIGHT: false,
+  D_SHOW_SLIDE_STATUS: false,
 };
 
 export const defaultSliderState: SliderState = {
