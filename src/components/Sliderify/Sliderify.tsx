@@ -299,8 +299,9 @@ const Sliderify = ({
         return defaultSliderState.active;
 
       if (active === 0) return preparedSlides.length;
+      return active;
     }
-    return active;
+    return active + 1;
   };
 
   const onDotClickSlide = useCallback(
